@@ -1,0 +1,4 @@
+#+title: Questions
+
+1) NewHeight = (nh, n).Round1 --- what is the n?
+2) Number of rounds for each transaction: it is unbounded? Why? This could lead to infinite loop of Unsuccess
