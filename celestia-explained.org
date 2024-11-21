@@ -1,0 +1,37 @@
+#+title: Celestia Explained
+
+* What is Celestia?
+Celestia is a *modular data availability (DA) network* that securely scales with
+the number of users, making it easy for anyone to launch their own blockchain.
+
+And by making the blockchain stack modular, anyone can launch their own
+blockchain without needing a validator set.
+* What is data availability?
+Usually, Users of a monolithic blockchain usually download all the data to check
+that it is available.
+
+As blocks get bigger, it becomes impractical for normal users to download all
+the data meaning that they can’t verify the chain. Modular chains solve this
+problem by making it possible for users to verify very large blocks using a
+technology called *data availability sampling*.
+* What's data availability sampling?
+Data availability sampling (DAS) is the new primitive that *enables Celestia
+light nodes to verify DA efficiently*. Instead of downloading all data, *light
+nodes only download a tiny portion of each block*.
+
+Importantly, DAS allows Celestia to scale with the number of users (light
+nodes). So, *as the light node network grows* *over time, Celestia can scale to
+the data throughput needed* for millions of rollups without compromising on
+security for end users.
+* And what is a modular blockchain?
+Modular blockchains are a new paradigm in blockchain design. Instead of one
+blockchain doing everything, modular blockchains specialize and optimize to
+perform a given function. This specialization provides breakthroughs in
+scalability, flexibility, and interoperability, enabling developers to build
+blockchain applications for mass adoption.
+
+The modules of Celestia (and other modular blockchain) are:
+1) Execution
+2) Settlement
+3) Consensus (Proof of Stake)
+4) Data availability
