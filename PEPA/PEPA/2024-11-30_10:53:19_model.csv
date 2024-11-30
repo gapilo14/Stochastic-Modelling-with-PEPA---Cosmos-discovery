@@ -1,0 +1,13 @@
+Component population;;;Total cost;Performance cost;Population cost;Measured Performance;;;;;;;;;;;;Total population;;PSO parameters;;;;;;;;;;NewHeight;1.0;;0.401164949273963;0.802329898547926;0.0;p;0.27908712817000936;r;0.2790309130686658;pc;0.27907310334104385;c;0.034883541636932816;pv;0.2790620087838425;nh;0.03488391371194949;1.0;;Global best weight;100.0;Personal best weight;100.0;Population count;10.0;Generations;100.0;Original velocity weight;100.0;8.0
+
+Configuration 
+Evaluator choice ; Throughput
+Search type choice ; Particle Swarm Optimisation
+Search domain ; Search on components
+Hill Climbing;Mutation rate ; 1.0;Experiments ; 2.0;Generations ; 10.0;
+ODE parameters;ode.integration.step ; 100.0;ode.integration.stop-time ; 500.0;ode.integration.rtol ; 1.0E-4;ode.integration.atol ; 1.0E-8;ode.integration.start-time ; 0.0;ode.steady-state.norm ; 1.0E-6;
+Cost function parameters;Population weight ; 1.0;Performance weight ; 1.0;
+Particle Swarm Optimisation;Global best weight;Minimum ; 1.0;Maximum ; 100.0;Range ; 1.0;;Personal best weight;Minimum ; 1.0;Maximum ; 100.0;Range ; 1.0;;Population count;Minimum ; 10.0;Maximum ; 10.0;Range ; 1.0;;Experiments;Minimum ; 2.0;Maximum ; 2.0;Range ; 1.0;;Generations;Minimum ; 1.0;Maximum ; 100.0;Range ; 1.0;;Original velocity weight;Minimum ; 1.0;Maximum ; 100.0;Range ; 1.0;
+Component ranges;NewHeight;Minimum ; 1.0;Maximum ; 1.0;Range ; 1.0;Weight ; 1.0;
+Targets;p;Target ; 1.0;Performance penalty ; 0.0;Weight ; 1.0;;r;Target ; 1.0;Performance penalty ; 0.0;Weight ; 1.0;;pc;Target ; 1.0;Performance penalty ; 0.0;Weight ; 1.0;;c;Target ; 1.0;Performance penalty ; 0.0;Weight ; 1.0;;pv;Target ; 1.0;Performance penalty ; 0.0;Weight ; 1.0;;nh;Target ; 1.0;Performance penalty ; 0.0;Weight ; 1.0;
+Selected;p;r;pc;c;pv;nh

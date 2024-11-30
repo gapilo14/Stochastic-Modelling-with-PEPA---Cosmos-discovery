@@ -1,19 +1,18 @@
-// Rates
 n = 1.0;
-pFF = 1.0;
-pF = 1.0;
-pS = 1.0;
-w1FF = 0.5;
-gammaFF = 1.0;
-w1F = 0.5;
-gammaF = 1.0;
-w1S = 0.5;
-gammaS = 1.0;
-w2 = 0.5;
+pFF = 1/3;
+pF = 1/3;
+pS = 1/3;
+w1FF = 0.928;
+gammaFF = 0.928;
+w1F = 0.6321;
+gammaF = 0.6321;
+w1S = 0.1101;
+gammaS = 0.1101;
+w2 = 0.6321;
 beta = 1.0;
-delta = 1.0;
-w3 = 0.5;
-eta = 1.0;
+delta = 1;
+w3 = 0.99999;
+eta = 1;
 
 //model
 NewHeight = (nh, n).Round;
