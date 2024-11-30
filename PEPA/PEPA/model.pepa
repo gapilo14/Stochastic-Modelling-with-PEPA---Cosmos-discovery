@@ -1,0 +1,29 @@
+// Rates
+n = 1.0;
+pFF = 1.0;
+pF = 1.0;
+pS = 1.0;
+w1FF = 0.5;
+gammaFF = 1.0;
+w1F = 0.5;
+gammaF = 1.0;
+w1S = 0.5;
+gammaS = 1.0;
+w2 = 0.5;
+beta = 1.0;
+delta = 1.0;
+w3 = 0.5;
+eta = 1.0;
+
+//model
+NewHeight = (nh, n).Round;
+Round = (r, pFF * n).ProposeFF + (r, pF * n).ProposeF + (r, pS * n).ProposeS;
+ProposeFF = (p, w1FF * gammaFF).Prevote + (p, (1-w1FF) * gammaFF).NilPrevote;
+ProposeF = (p, w1F * gammaF).Prevote + (p, (1-w1F) * gammaF).NilPrevote;
+ProposeS = (p, w1S * gammaS).Prevote + (p, (1-w1S) * gammaS).NilPrevote;
+Prevote = (pv, w2 * beta).PreCommit + (pv, (1-w2) * beta).Unsuccess;
+NilPrevote = (pv, beta).Unsuccess;
+Unsuccess = (pc, delta).Round; 
+PreCommit = (pc, w3 * delta).Commit + (pc, (1-w3) * delta).Round;
+Commit = (c, eta).NewHeight;
+NewHeight
