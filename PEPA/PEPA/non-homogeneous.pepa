@@ -55,7 +55,7 @@ Unsuccess2 = (pc, delta).Round3;
 
 PreCommit2 = (pc, w3 * delta).Commit2 + (pc, (1-w3) * delta).Round3;
 
-Commit2 = (c, eta).NewHeight
+Commit2 = (c, eta).NewHeight;
 
 // ROUND 3
 
@@ -75,7 +75,7 @@ Unsuccess3 = (pc, delta).Round4;
 
 PreCommit3 = (pc, w3 * delta).Commit3 + (pc, (1-w3) * delta).Round4;
 
-Commit3 = (c, eta).NewHeight
+Commit3 = (c, eta).NewHeight;
 
 // ROUND 4
 
@@ -95,7 +95,7 @@ Unsuccess4 = (pc, delta).Round5;
 
 PreCommit4 = (pc, w3 * delta).Commit4 + (pc, (1-w3) * delta).Round5;
 
-Commit4 = (c, eta).NewHeight
+Commit4 = (c, eta).NewHeight;
 
 // ROUND 5
 
@@ -115,7 +115,7 @@ Unsuccess5 = (pc, delta).Round6;
 
 PreCommit5 = (pc, w3 * delta).Commit5 + (pc, (1-w3) * delta).Round6;
 
-Commit5 = (c, eta).NewHeight
+Commit5 = (c, eta).NewHeight;
 
 // ROUND 6
 
@@ -135,6 +135,6 @@ Unsuccess6 = (pc, delta).Round6;
 
 PreCommit6 = (pc, w3 * delta).Commit6 + (pc, (1-w3) * delta).Round6;
 
-Commit6 = (c, eta).NewHeight
+Commit6 = (c, eta).NewHeight;
 
 NewHeight

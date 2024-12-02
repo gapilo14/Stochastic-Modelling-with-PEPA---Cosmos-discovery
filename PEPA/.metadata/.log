@@ -12473,3 +12473,41 @@ uk.ac.ed.inf.pepa.ctmc.derivation.DerivationException: Incomplete model with res
 	at uk.ac.ed.inf.pepa.eclipse.core.internal.PepaModel.derive(PepaModel.java:244)
 	at uk.ac.ed.inf.pepa.eclipse.ui.actions.ActionCommands$1.run(ActionCommands.java:58)
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+!SESSION 2024-12-02 15:43:25.461 -----------------------------------------------
+eclipse.buildId=4.12.0.I20190605-1800
+java.version=17.0.13
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.core 1 0 2024-12-02 15:43:43.839
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.core.resources 4 2 2024-12-02 16:07:46.449
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "uk.ac.ed.inf.pepa.parsing.ASTNode.accept(uk.ac.ed.inf.pepa.parsing.ASTVisitor)" because "this.node1" is null
+	at uk.ac.ed.inf.pepa.parsing.EqualityVisitor.checkEquality(EqualityVisitor.java:23)
+	at uk.ac.ed.inf.pepa.parsing.EqualityVisitor.compare(EqualityVisitor.java:29)
+	at uk.ac.ed.inf.pepa.parsing.EqualityVisitor.visitModelNode(EqualityVisitor.java:130)
+	at uk.ac.ed.inf.pepa.parsing.ModelNode.accept0(ModelNode.java:47)
+	at uk.ac.ed.inf.pepa.parsing.ASTNode.accept(ASTNode.java:113)
+	at uk.ac.ed.inf.pepa.parsing.EqualityVisitor.checkEquality(EqualityVisitor.java:23)
+	at uk.ac.ed.inf.pepa.parsing.EqualityVisitor.compare(EqualityVisitor.java:29)
+	at uk.ac.ed.inf.pepa.eclipse.core.internal.PepaModel.doParse(PepaModel.java:166)
+	at uk.ac.ed.inf.pepa.eclipse.core.internal.PepaModel.parse(PepaModel.java:129)
+	at uk.ac.ed.inf.pepa.eclipse.core.PepaManager$1$1.visit(PepaManager.java:164)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:51)
+	at uk.ac.ed.inf.pepa.eclipse.core.PepaManager$1.resourceChanged(PepaManager.java:146)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:305)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:295)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:158)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:365)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:150)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
