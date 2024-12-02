@@ -15,14 +15,126 @@ w3 = 0.99999;
 eta = 1;
 
 //model
-NewHeight = (nh, n).Round;
-Round = (r, pFF * n).ProposeFF + (r, pF * n).ProposeF + (r, pS * n).ProposeS;
-ProposeFF = (p, w1FF * gammaFF).Prevote + (p, (1-w1FF) * gammaFF).NilPrevote;
-ProposeF = (p, w1F * gammaF).Prevote + (p, (1-w1F) * gammaF).NilPrevote;
-ProposeS = (p, w1S * gammaS).Prevote + (p, (1-w1S) * gammaS).NilPrevote;
-Prevote = (pv, w2 * beta).PreCommit + (pv, (1-w2) * beta).Unsuccess;
-NilPrevote = (pv, beta).Unsuccess;
-Unsuccess = (pc, delta).Round; 
-PreCommit = (pc, w3 * delta).Commit + (pc, (1-w3) * delta).Round;
-Commit = (c, eta).NewHeight;
+NewHeight = (nh, n).Round1;
+
+// ROUND 1
+
+Round1 = (r, pFF * n).ProposeFF1 + (r, pF * n).ProposeF1 + (r, pS * n).ProposeS1;
+
+ProposeFF1 = (p, w1FF * gammaFF).Prevote1 + (p, (1-w1FF) * gammaFF).NilPrevote1;
+
+ProposeF1 = (p, w1F * gammaF).Prevote1 + (p, (1-w1F) * gammaF).NilPrevote1;
+
+ProposeS1 = (p, w1S * gammaS).Prevote1 + (p, (1-w1S) * gammaS).NilPrevote1;
+
+Prevote1 = (pv, w2 * beta).PreCommit1 + (pv, (1-w2) * beta).Unsuccess1;
+
+NilPrevote1 = (pv, beta).Unsuccess1;
+
+Unsuccess1 = (pc, delta).Round2;
+
+PreCommit1 = (pc, w3 * delta).Commit1 + (pc, (1-w3) * delta).Round1;
+
+Commit1 = (c, eta).NewHeight;
+
+// ROUND 2
+
+Round2 = (r, pFF * n).ProposeFF2 + (r, pF * n).ProposeF2 + (r, pS * n).ProposeS2;
+
+ProposeFF2 = (p, w1FF * gammaFF).Prevote2 + (p, (1-w1FF) * gammaFF).NilPrevote2;
+
+ProposeF2 = (p, w1F * gammaF).Prevote2 + (p, (1-w1F) * gammaF).NilPrevote2;
+
+ProposeS2 = (p, w1S * gammaS).Prevote2 + (p, (1-w1S) * gammaS).NilPrevote2;
+
+Prevote2 = (pv, w2 * beta).PreCommit2 + (pv, (1-w2) * beta).Unsuccess2;
+
+NilPrevote2 = (pv, beta).Unsuccess2;
+
+Unsuccess2 = (pc, delta).Round3;
+
+PreCommit2 = (pc, w3 * delta).Commit2 + (pc, (1-w3) * delta).Round3;
+
+Commit2 = (c, eta).NewHeight
+
+// ROUND 3
+
+Round3 = (r, pFF * n).ProposeFF3 + (r, pF * n).ProposeF3 + (r, pS * n).ProposeS3;
+
+ProposeFF3 = (p, w1FF * gammaFF).Prevote3 + (p, (1-w1FF) * gammaFF).NilPrevote3;
+
+ProposeF3 = (p, w1F * gammaF).Prevote3 + (p, (1-w1F) * gammaF).NilPrevote3;
+
+ProposeS3 = (p, w1S * gammaS).Prevote3 + (p, (1-w1S) * gammaS).NilPrevote3;
+
+Prevote3 = (pv, w2 * beta).PreCommit3 + (pv, (1-w2) * beta).Unsuccess3;
+
+NilPrevote3 = (pv, beta).Unsuccess3;
+
+Unsuccess3 = (pc, delta).Round4;
+
+PreCommit3 = (pc, w3 * delta).Commit3 + (pc, (1-w3) * delta).Round4;
+
+Commit3 = (c, eta).NewHeight
+
+// ROUND 4
+
+Round4 = (r, pFF * n).ProposeFF4 + (r, pF * n).ProposeF4 + (r, pS * n).ProposeS4;
+
+ProposeFF4 = (p, w1FF * gammaFF).Prevote4 + (p, (1-w1FF) * gammaFF).NilPrevote4;
+
+ProposeF4 = (p, w1F * gammaF).Prevote4 + (p, (1-w1F) * gammaF).NilPrevote4;
+
+ProposeS4 = (p, w1S * gammaS).Prevote4 + (p, (1-w1S) * gammaS).NilPrevote4;
+
+Prevote4 = (pv, w2 * beta).PreCommit4 + (pv, (1-w2) * beta).Unsuccess4;
+
+NilPrevote4 = (pv, beta).Unsuccess4;
+
+Unsuccess4 = (pc, delta).Round5;
+
+PreCommit4 = (pc, w3 * delta).Commit4 + (pc, (1-w3) * delta).Round5;
+
+Commit4 = (c, eta).NewHeight
+
+// ROUND 5
+
+Round5 = (r, pFF * n).ProposeFF5 + (r, pF * n).ProposeF5 + (r, pS * n).ProposeS5;
+
+ProposeFF5 = (p, w1FF * gammaFF).Prevote5 + (p, (1-w1FF) * gammaFF).NilPrevote5;
+
+ProposeF5 = (p, w1F * gammaF).Prevote5 + (p, (1-w1F) * gammaF).NilPrevote5;
+
+ProposeS5 = (p, w1S * gammaS).Prevote5 + (p, (1-w1S) * gammaS).NilPrevote5;
+
+Prevote5 = (pv, w2 * beta).PreCommit5 + (pv, (1-w2) * beta).Unsuccess5;
+
+NilPrevote5 = (pv, beta).Unsuccess5;
+
+Unsuccess5 = (pc, delta).Round6;
+
+PreCommit5 = (pc, w3 * delta).Commit5 + (pc, (1-w3) * delta).Round6;
+
+Commit5 = (c, eta).NewHeight
+
+// ROUND 6
+
+Round6 = (r, pFF * n).ProposeFF6 + (r, pF * n).ProposeF6 + (r, pS * n).ProposeS6;
+
+ProposeFF6 = (p, w1FF * gammaFF).Prevote6 + (p, (1-w1FF) * gammaFF).NilPrevote6;
+
+ProposeF6 = (p, w1F * gammaF).Prevote6 + (p, (1-w1F) * gammaF).NilPrevote6;
+
+ProposeS6 = (p, w1S * gammaS).Prevote6 + (p, (1-w1S) * gammaS).NilPrevote6;
+
+Prevote6 = (pv, w2 * beta).PreCommit6 + (pv, (1-w2) * beta).Unsuccess6;
+
+NilPrevote6 = (pv, beta).Unsuccess6;
+
+Unsuccess6 = (pc, delta).Round6;
+
+PreCommit6 = (pc, w3 * delta).Commit6 + (pc, (1-w3) * delta).Round6;
+
+Commit6 = (c, eta).NewHeight
+
 NewHeight

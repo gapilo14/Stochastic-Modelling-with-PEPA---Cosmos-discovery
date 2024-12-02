@@ -13,12 +13,6 @@ w1S = round(1 - math.exp(-T / t1S), 4)
 print("w1FF = ", w1FF)
 print("w1F = ", w1F)
 print("w1S = ", w1S)
-# print("lol: ", 1/t1S)
-
-# newT = T
-# for i in range(1, 10):
-#     print(1/newT)
-#     newT = newT + 0.5
 
 T2 = 1
 t2 = 1
