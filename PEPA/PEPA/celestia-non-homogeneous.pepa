@@ -19,73 +19,73 @@ eta = 1.0;
 
 // RATES 2
 
-w1FF = 0.7317;
-gammaFF = 0.4386;
-w1F = 0.3935;
-gammaF = 0.2857;
-w1S = 0.0566;
-gammaS = 0.2857;
-w2 = 0.6321;
-beta = 1.0;
-delta = 0.6667;
-w3 = 0.999;
-eta = 1.0;
+w1FF2 = 0.7317;
+gammaFF2 = 0.4386;
+w1F2 = 0.3935;
+gammaF2 = 0.2857;
+w1S2 = 0.0566;
+gammaS2 = 0.2857;
+w22 = 0.6321;
+beta2 = 1.0;
+delta2 = 0.6667;
+w32 = 0.999;
+eta2 = 1.0;
 
 // RATES 3
 
-w1FF = 0.7317;
-gammaFF = 0.4386;
-w1F = 0.3935;
-gammaF = 0.25;
-w1S = 0.0566;
-gammaS = 0.25;
-w2 = 0.6321;
-beta = 1.0;
-delta = 0.5;
-w3 = 0.999;
-eta = 1.0;
+w1FF3 = 0.7317;
+gammaFF3 = 0.4386;
+w1F3 = 0.3935;
+gammaF3 = 0.25;
+w1S3 = 0.0566;
+gammaS3 = 0.25;
+w23 = 0.6321;
+beta3 = 1.0;
+delta3 = 0.5;
+w33 = 0.999;
+eta3 = 1.0;
 
 // RATES 4
 
-w1FF = 0.7317;
-gammaFF = 0.4386;
-w1F = 0.3935;
-gammaF = 0.2222;
-w1S = 0.0566;
-gammaS = 0.2222;
-w2 = 0.6321;
-beta = 1.0;
-delta = 0.4;
-w3 = 0.999;
-eta = 1.0;
+w1FF4 = 0.7317;
+gammaFF4 = 0.4386;
+w1F4 = 0.3935;
+gammaF4 = 0.2222;
+w1S4 = 0.0566;
+gammaS4 = 0.2222;
+w24 = 0.6321;
+beta4 = 1.0;
+delta4 = 0.4;
+w34 = 0.999;
+eta4 = 1.0;
 
 // RATES 5
 
-w1FF = 0.7317;
-gammaFF = 0.4386;
-w1F = 0.3935;
-gammaF = 0.2;
-w1S = 0.0566;
-gammaS = 0.2;
-w2 = 0.6321;
-beta = 1.0;
-delta = 0.3333;
-w3 = 0.999;
-eta = 1.0;
+w1FF5 = 0.7317;
+gammaFF5 = 0.4386;
+w1F5 = 0.3935;
+gammaF5 = 0.2;
+w1S5 = 0.0566;
+gammaS5 = 0.2;
+w25 = 0.6321;
+beta5 = 1.0;
+delta5 = 0.3333;
+w35 = 0.999;
+eta5 = 1.0;
 
 // RATES 6
 
-w1FF = 0.7317;
-gammaFF = 0.4386;
-w1F = 0.3935;
-gammaF = 0.1818;
-w1S = 0.0566;
-gammaS = 0.1818;
-w2 = 0.6321;
-beta = 1.0;
-delta = 0.2857;
-w3 = 0.999;
-eta = 1.0;
+w1FF6 = 0.7317;
+gammaFF6 = 0.4386;
+w1F6 = 0.3935;
+gammaF6 = 0.1818;
+w1S6 = 0.0566;
+gammaS6 = 0.1818;
+w26 = 0.6321;
+beta6 = 1.0;
+delta6 = 0.2857;
+w36 = 0.999;
+eta6 = 1.0;
 
 //model
 NewHeight = (nh, n).Round1;
