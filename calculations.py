@@ -14,8 +14,6 @@ for i in range(1, 7):
     print('\n')
     print("ROUND ", i)
 
-
-
     w1FF = round(1 - math.exp(-T / t1FF), 4)
     w1F = round(1 - math.exp(-T / t1F), 4)
     w1S = round(1 - math.exp(-T / t1S), 4)
