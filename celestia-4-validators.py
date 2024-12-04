@@ -36,8 +36,6 @@ for i in range(1, 7):
     print("gammaF =", gammaF, ";")
     print("w1S =", w1S, ";")
     print("gammaS =", gammaS, ";")
-    print("w1SS =", w1SS, ";")
-    print("gammaSS =", gammaSS, ";")
 
     t2 = 1
     w2 = round(1 - math.exp(-T2 / t2), 4)
@@ -55,3 +53,6 @@ for i in range(1, 7):
 
     eta = 1 / T4
     print("eta =", eta, ";")
+
+    print("w1SS =", w1SS, ";")
+    print("gammaSS =", gammaSS, ";")
