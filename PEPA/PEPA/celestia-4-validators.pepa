@@ -1,0 +1,238 @@
+n = 1.0;
+pFF = 1/4;
+pF = 1/4;
+pS = 1/4;
+pSS = 1/4;
+
+// RATES 1
+
+w1FF = 0.7317;
+gammaFF = 0.4386;
+w1F = 0.3935;
+gammaF = 0.3333;
+w1S = 0.0566;
+gammaS = 0.3333;
+w2 = 0.6321;
+beta = 1.0;
+delta = 1.0;
+w3 = 0.999;
+eta = 1.0;
+w1SS = 0.0296;
+gammaSS = 0.3333;
+
+// RATES 2
+
+w1FF2 = 0.7317;
+gammaFF2 = 0.4386;
+w1F2 = 0.3935;
+gammaF2 = 0.2857;
+w1S2 = 0.0566;
+gammaS2 = 0.2857;
+w22 = 0.6321;
+beta2 = 1.0;
+delta2 = 0.6667;
+w32 = 0.999;
+eta2 = 1.0;
+w1SS2 = 0.0296;
+gammaSS2 = 0.2857;
+
+// RATES 3
+
+w1FF3 = 0.7317;
+gammaFF3 = 0.4386;
+w1F3 = 0.3935;
+gammaF3 = 0.25;
+w1S3 = 0.0566;
+gammaS3 = 0.25;
+w23 = 0.6321;
+beta3 = 1.0;
+delta3 = 0.5;
+w33 = 0.999;
+eta3 = 1.0;
+w1SS3 = 0.0296;
+gammaSS3 = 0.25;
+
+// RATES 4
+
+w1FF4 = 0.7317;
+gammaFF4 = 0.4386;
+w1F4 = 0.3935;
+gammaF4 = 0.2222;
+w1S4 = 0.0566;
+gammaS4 = 0.2222;
+w24 = 0.6321;
+beta4 = 1.0;
+delta4 = 0.4;
+w34 = 0.999;
+eta4 = 1.0;
+w1SS4 = 0.0296;
+gammaSS4 = 0.2222;
+
+// RATES 5
+
+w1FF5 = 0.7317;
+gammaFF5 = 0.4386;
+w1F5 = 0.3935;
+gammaF5 = 0.2;
+w1S5 = 0.0566;
+gammaS5 = 0.2;
+w25 = 0.6321;
+beta5 = 1.0;
+delta5 = 0.3333;
+w35 = 0.999;
+eta5 = 1.0;
+w1SS5 = 0.0296;
+gammaSS5 = 0.2;
+
+// RATES 6
+
+w1FF6 = 0.7317;
+gammaFF6 = 0.4386;
+w1F6 = 0.3935;
+gammaF6 = 0.1818;
+w1S6 = 0.0566;
+gammaS6 = 0.1818;
+w26 = 0.6321;
+beta6 = 1.0;
+delta6 = 0.2857;
+w36 = 0.999;
+eta6 = 1.0;
+w1SS6 = 0.0296;
+gammaSS6 = 0.1818;
+
+//model
+NewHeight = (nh, n).Round1;
+
+// ROUND 1
+
+Round1 = (r, pFF * n).ProposeFF1 + (r, pF * n).ProposeF1 + (r, pS * n).ProposeS1 + (r, pSS * n).ProposeSS1;
+
+ProposeFF1 = (p, w1FF * gammaFF).Prevote1 + (p, (1-w1FF) * gammaFF).NilPrevote1;
+
+ProposeF1 = (p, w1F * gammaF).Prevote1 + (p, (1-w1F) * gammaF).NilPrevote1;
+
+ProposeS1 = (p, w1S * gammaS).Prevote1 + (p, (1-w1S) * gammaS).NilPrevote1;
+
+ProposeSS1 = (p, w1SS1 * gammaSS1).Prevote1 + (p, (1-w1SS1) * gammaSS1).NilPrevote1;
+
+Prevote1 = (pv, w2 * beta).PreCommit1 + (pv, (1-w2) * beta).Unsuccess1;
+
+NilPrevote1 = (pv, beta).Unsuccess1;
+
+Unsuccess1 = (pc, delta).Round2;
+
+PreCommit1 = (pc, w3 * delta).Commit1 + (pc, (1-w3) * delta).Round1;
+
+Commit1 = (c, eta).NewHeight;
+
+// ROUND 2
+
+Round2 = (r, pFF * n).ProposeFF2 + (r, pF * n).ProposeF2 + (r, pS * n).ProposeS2 + (r, pSS * n).ProposeSS2;
+
+ProposeFF2 = (p, w1FF2 * gammaFF2).Prevote2 + (p, (1-w1FF2) * gammaFF2).NilPrevote2;
+
+ProposeF2 = (p, w1F2 * gammaF2).Prevote2 + (p, (1-w1F2) * gammaF2).NilPrevote2;
+
+ProposeS2 = (p, w1S2 * gammaS2).Prevote2 + (p, (1-w1S2) * gammaS2).NilPrevote2;
+
+ProposeSS2 = (p, w1SS2 * gammaSS2).Prevote2 + (p, (1-w1SS2) * gammaSS2).NilPrevote2;
+
+Prevote2 = (pv, w22 * beta2).PreCommit2 + (pv, (1-w22) * beta2).Unsuccess2;
+
+NilPrevote2 = (pv, beta2).Unsuccess2;
+
+Unsuccess2 = (pc, delta2).Round3;
+
+PreCommit2 = (pc, w32 * delta2).Commit2 + (pc, (1-w32) * delta2).Round3;
+
+Commit2 = (c, eta2).NewHeight;
+
+// ROUND 3
+
+Round3 = (r, pFF * n).ProposeFF3 + (r, pF * n).ProposeF3 + (r, pS * n).ProposeS3 + (r, pSS * n).ProposeSS3;
+
+ProposeFF3 = (p, w1FF3 * gammaFF3).Prevote3 + (p, (1-w1FF3) * gammaFF3).NilPrevote3;
+
+ProposeF3 = (p, w1F3 * gammaF3).Prevote3 + (p, (1-w1F3) * gammaF3).NilPrevote3;
+
+ProposeS3 = (p, w1S3 * gammaS3).Prevote3 + (p, (1-w1S3) * gammaS3).NilPrevote3;
+
+ProposeSS3 = (p, w1SS3 * gammaSS3).Prevote3 + (p, (1-w1SS3) * gammaSS3).NilPrevote3;
+
+Prevote3 = (pv, w23 * beta3).PreCommit3 + (pv, (1-w23) * beta3).Unsuccess3;
+
+NilPrevote3 = (pv, beta3).Unsuccess3;
+
+Unsuccess3 = (pc, delta3).Round4;
+
+PreCommit3 = (pc, w3 * delta3).Commit3 + (pc, (1-w33) * delta3).Round4;
+
+Commit3 = (c, eta3).NewHeight;
+
+// ROUND 4
+
+Round4 = (r, pFF * n).ProposeFF4 + (r, pF * n).ProposeF4 + (r, pS * n).ProposeS4 + (r, pSS * n).ProposeSS4;
+
+ProposeFF4 = (p, w1FF4 * gammaFF4).Prevote4 + (p, (1-w1FF4) * gammaFF4).NilPrevote4;
+
+ProposeF4 = (p, w1F4 * gammaF4).Prevote4 + (p, (1-w1F4) * gammaF4).NilPrevote4;
+
+ProposeS4 = (p, w1S4 * gammaS4).Prevote4 + (p, (1-w1S4) * gammaS4).NilPrevote4;
+
+ProposeSS4 = (p, w1SS4 * gammaSS4).Prevote4 + (p, (1-w1SS4) * gammaSS4).NilPrevote4;
+
+Prevote4 = (pv, w24 * beta4).PreCommit4 + (pv, (1-w24) * beta4).Unsuccess4;
+
+NilPrevote4 = (pv, beta4).Unsuccess4;
+
+Unsuccess4 = (pc, delta4).Round5;
+
+PreCommit4 = (pc, w34 * delta4).Commit4 + (pc, (1-w34) * delta4).Round5;
+
+Commit4 = (c, eta4).NewHeight;
+
+// ROUND 5
+
+Round5 = (r, pFF * n).ProposeFF5 + (r, pF * n).ProposeF5 + (r, pS * n).ProposeS5 + (r, pSS * n).ProposeSS5;
+
+ProposeFF5 = (p, w1FF5 * gammaFF5).Prevote5 + (p, (1-w1FF5) * gammaFF5).NilPrevote5;
+
+ProposeF5 = (p, w1F5 * gammaF5).Prevote5 + (p, (1-w1F5) * gammaF5).NilPrevote5;
+
+ProposeS5 = (p, w1S5 * gammaS5).Prevote5 + (p, (1-w1S5) * gammaS5).NilPrevote5;
+
+ProposeSS5 = (p, w1SS5 * gammaSS5).Prevote5 + (p, (1-w1SS5) * gammaSS5).NilPrevote5;
+
+Prevote5 = (pv, w25 * beta5).PreCommit5 + (pv, (1-w25) * beta5).Unsuccess5;
+
+NilPrevote5 = (pv, beta5).Unsuccess5;
+
+Unsuccess5 = (pc, delta5).Round6;
+
+PreCommit5 = (pc, w35 * delta5).Commit5 + (pc, (1-w35) * delta5).Round6;
+
+Commit5 = (c, eta5).NewHeight;
+
+// ROUND 6
+
+Round6 = (r, pFF * n).ProposeFF6 + (r, pF * n).ProposeF6 + (r, pS * n).ProposeS6 + (r, pSS * n).ProposeSS6;
+
+ProposeFF6 = (p, w1FF6 * gammaFF6).Prevote6 + (p, (1-w1FF6) * gammaFF6).NilPrevote6;
+
+ProposeF6 = (p, w1F6 * gammaF6).Prevote6 + (p, (1-w1F6) * gammaF6).NilPrevote6;
+
+ProposeS6 = (p, w1S6 * gammaS6).Prevote6 + (p, (1-w1S6) * gammaS6).NilPrevote6;
+
+ProposeSS6 = (p, w1SS6 * gammaSS).Prevote6 + (p, (1-w1SS6) * gammaSS6).NilPrevote6;
+
+Prevote6 = (pv, w26 * beta6).PreCommit6 + (pv, (1-w26) * beta6).Unsuccess6;
+
+NilPrevote6 = (pv, beta6).Unsuccess6;
+
+Unsuccess6 = (pc, delta6).Round6;
+
+PreCommit6 = (pc, w36 * delta6).Commit6 + (pc, (1-w36) * delta6).Round6;
+
+Commit6 = (c, eta6).NewHeight;
+
+NewHeight
