@@ -12539,3 +12539,12 @@ java.lang.NullPointerException: Cannot invoke "uk.ac.ed.inf.pepa.parsing.ASTNode
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:150)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2024-12-05 14:37:06.133
+!MESSAGE An internal error occurred during: "Search Marketplace for compatible editors (*.statespace)".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.epp.mpc.core.model.ITags.getTags()" because the return value of "org.eclipse.epp.mpc.core.model.INode.getTags()" is null
+	at org.eclipse.epp.internal.mpc.ui.discovery.DiscoverFileSupportJob.orderNodesByTagSubExtensionCount(DiscoverFileSupportJob.java:126)
+	at org.eclipse.epp.internal.mpc.ui.discovery.DiscoverFileSupportJob.run(DiscoverFileSupportJob.java:87)
+	at org.eclipse.epp.internal.mpc.ui.discovery.DiscoverFileSupportJob.run(DiscoverFileSupportJob.java:70)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
