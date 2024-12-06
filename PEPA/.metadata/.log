@@ -598,3 +598,16 @@ org.eclipse.core.runtime.AssertionFailedException: null argument:
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:150)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:244)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2024-12-06 15:42:30.919 -----------------------------------------------
+eclipse.buildId=4.12.0.I20190605-1800
+java.version=17.0.13
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-12-06 15:42:37.881
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.core 1 0 2024-12-06 15:42:38.486
+!MESSAGE Using Apache MINA sshd as ssh client.
