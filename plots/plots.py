@@ -58,3 +58,25 @@ plt.legend()
 plt.grid()
 plt.savefig("throughput_pv.png")
 # plt.show()
+
+# Example usage for "Throughput: pv" CSV
+file_path_pv = '../PEPA/PEPA/g-propose-prevote.csv'
+k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
+
+# Create interpolation function for "Throughput: pv"
+interp_func_pv = interp1d(k_values_pv, pv_values, kind='cubic')
+
+# Generate finer k values for a smoother curve
+k_fine_pv = np.linspace(min(k_values_pv), max(k_values_pv), 500)
+p_fine_pv = interp_func_pv(k_fine_pv)
+
+# Plot and save for "Throughput: pv"
+plt.figure(figsize=(10, 6))
+plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="blue")
+plt.title("Throughput vs Coefficient g (prevote, propose)")
+plt.xlabel("Coefficient g")
+plt.ylabel("Throughput pv, p")
+plt.legend()
+plt.grid()
+plt.savefig("throughput_g_pv_p.png")
+# plt.show()
