@@ -50,8 +50,15 @@ w3 = 0.999;
 
 gammaFF = 1/t1FF;
 gammaF = 1/t1F;
-beta = 1/t2h;
+//beta = 1/t2h;
 eta = 1/t4;
+
+beta1 = 1/t12
+beta2 = 1/(t2+g);
+beta3 = 1/(t2+(g*2));
+beta4 = 1/(t2+(g*3));
+beta5 = 1/(t2+(g*4));
+beta6 = 1/(t2+(g*5));
 
 gammaS1 = 1/t1;
 gammaS2 = 1/(t1+g);
@@ -80,9 +87,9 @@ ProposeF1 = (p, w1F * gammaF).Prevote1 + (p, (1-w1F) * gammaF).NilPrevote1;
 
 ProposeS1 = (p, w1S * gammaS1).Prevote1 + (p, (1-w1S) * gammaS1).NilPrevote1;
 
-Prevote1 = (pv, w2 * beta).PreCommit1 + (pv, (1-w2) * beta).Unsuccess1;
+Prevote1 = (pv, w2 * beta1).PreCommit1 + (pv, (1-w2) * beta1).Unsuccess1;
 
-NilPrevote1 = (pv, beta).Unsuccess1;
+NilPrevote1 = (pv, beta1).Unsuccess1;
 
 Unsuccess1 = (pc, delta1).Round2;
 
@@ -100,9 +107,9 @@ ProposeF2 = (p, w1F * gammaF).Prevote2 + (p, (1-w1F) * gammaF).NilPrevote2;
 
 ProposeS2 = (p, w1S * gammaS1).Prevote2 + (p, (1-w1S) * gammaS2).NilPrevote2;
 
-Prevote2 = (pv, w2 * beta).PreCommit2 + (pv, (1-w2) * beta).Unsuccess2;
+Prevote2 = (pv, w2 * beta2).PreCommit2 + (pv, (1-w2) * beta2).Unsuccess2;
 
-NilPrevote2 = (pv, beta).Unsuccess2;
+NilPrevote2 = (pv, beta2).Unsuccess2;
 
 Unsuccess2 = (pc, delta2).Round3;
 
@@ -120,9 +127,9 @@ ProposeF3 = (p, w1F * gammaF).Prevote3 + (p, (1-w1F) * gammaF).NilPrevote3;
 
 ProposeS3 = (p, w1S * gammaS3).Prevote3 + (p, (1-w1S) * gammaS3).NilPrevote3;
 
-Prevote3 = (pv, w2 * beta).PreCommit3 + (pv, (1-w2) * beta).Unsuccess3;
+Prevote3 = (pv, w2 * beta3).PreCommit3 + (pv, (1-w2) * beta3).Unsuccess3;
 
-NilPrevote3 = (pv, beta).Unsuccess3;
+NilPrevote3 = (pv, beta3).Unsuccess3;
 
 Unsuccess3 = (pc, delta3).Round4;
 
@@ -140,9 +147,9 @@ ProposeF4 = (p, w1F * gammaF).Prevote4 + (p, (1-w1F) * gammaF).NilPrevote4;
 
 ProposeS4 = (p, w1S * gammaS4).Prevote4 + (p, (1-w1S) * gammaS4).NilPrevote4;
 
-Prevote4 = (pv, w2 * beta).PreCommit4 + (pv, (1-w2) * beta).Unsuccess4;
+Prevote4 = (pv, w2 * beta4).PreCommit4 + (pv, (1-w2) * beta4).Unsuccess4;
 
-NilPrevote4 = (pv, beta).Unsuccess4;
+NilPrevote4 = (pv, beta4).Unsuccess4;
 
 Unsuccess4 = (pc, delta4).Round5;
 
@@ -160,9 +167,9 @@ ProposeF5 = (p, w1F * gammaF).Prevote5 + (p, (1-w1F) * gammaF).NilPrevote5;
 
 ProposeS5 = (p, w1S * gammaS5).Prevote5 + (p, (1-w1S) * gammaS5).NilPrevote5;
 
-Prevote5 = (pv, w2 * beta).PreCommit5 + (pv, (1-w2) * beta).Unsuccess5;
+Prevote5 = (pv, w2 * beta5).PreCommit5 + (pv, (1-w2) * beta5).Unsuccess5;
 
-NilPrevote5 = (pv, beta).Unsuccess5;
+NilPrevote5 = (pv, beta5).Unsuccess5;
 
 Unsuccess5 = (pc, delta5).Round6;
 
@@ -180,9 +187,9 @@ ProposeF6 = (p, w1F * gammaF).Prevote6 + (p, (1-w1F) * gammaF).NilPrevote6;
 
 ProposeS6 = (p, w1S * gammaS6).Prevote6 + (p, (1-w1S) * gammaS6).NilPrevote6;
 
-Prevote6 = (pv, w2 * beta).PreCommit6 + (pv, (1-w2) * beta).Unsuccess6;
+Prevote6 = (pv, w2 * beta6).PreCommit6 + (pv, (1-w2) * beta6).Unsuccess6;
 
-NilPrevote6 = (pv, beta).Unsuccess6;
+NilPrevote6 = (pv, beta6).Unsuccess6;
 
 Unsuccess6 = (pc, delta6).Round6;
 
