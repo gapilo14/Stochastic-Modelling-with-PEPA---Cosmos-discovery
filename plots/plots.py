@@ -156,3 +156,25 @@ plt.legend()
 plt.grid()
 plt.savefig("homogeneous-k-p-pv.png")
 # plt.show()
+
+## Example usage for "Throughput: pv" CSV
+file_path_pv = './csv/non-homogeneous-sigma-propose.csv'
+k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
+
+# Create interpolation function for "Throughput: pv"
+k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
+
+
+# Plot and save for "Throughput: pv"
+plt.figure(figsize=(10, 6))
+plt.plot(k_fine_pv, p_fine_pv, '-', label="Multi-Round >= 2", color="blue")
+plt.axvline(x=1, color="orange", linestyle="--")
+plt.axvline(x=1.8, color="red", linestyle="--", label="Optimal sigma")
+plt.title("Propose timeout for non-homogeneous proposers")
+plt.xlabel("Coefficient sigma")
+plt.ylabel("Network Throughput [blocks/s]")
+# plt.ylim(0, 1.0)
+plt.legend()
+plt.grid()
+plt.savefig("non-homogeneous-sigma-propose.png")
+# plt.show()
