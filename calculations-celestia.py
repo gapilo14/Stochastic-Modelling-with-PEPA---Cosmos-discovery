@@ -1,5 +1,5 @@
 import math
-
+import numpy as np
 t1FF = 1.14
 t1F = 3.0
 t1S = 25.73
@@ -43,3 +43,11 @@ print("------------------------------------")
 
 eta = 1 / T4
 print("eta =", eta)
+
+sigma = 1.0
+for i in np.arange(0.1, 1, 0.1):  # Use numpy.arange for floating-point range
+    sigma = i
+    w1 = round(1 - math.exp(-sigma), 4)
+    w2 = round(1 - math.exp(-sigma), 4)
+    print("w1 =", w1)
+    print("w2 =", w2)
