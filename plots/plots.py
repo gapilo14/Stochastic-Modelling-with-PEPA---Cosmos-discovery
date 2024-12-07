@@ -24,62 +24,8 @@ def interpolate(k_values, p_values):
     p_fine_p = interp_func_p(k_fine_p)
     return k_fine_p, p_fine_p
 
-# # Example usage for "Throughput: p" CSV
-# file_path_p = '../PEPA/PEPA/k-propose.csv'
-# k_values, p_values = parse_csv_to_arrays(file_path_p)
-
-# # Create interpolation function for "Throughput: p"
-# k_fine_p, p_fine_p = interpolate(k_values, p_values)
-
-# # Plot and save for "Throughput: p"
-# plt.figure(figsize=(10, 6))
-# plt.plot(k_fine_p, p_fine_p, '-', label="Network Throughput", color="orange")
-# plt.title("Throughput vs Coefficient k (propose)")
-# plt.xlabel("Coefficient k")
-# plt.ylabel("Network Throughput [blocks/s]")
-# plt.legend()
-# plt.grid()
-# plt.savefig("k_p.png")
-# # plt.show()
-
-# # Example usage for "Throughput: pv" CSV
-# file_path_pv = '../PEPA/PEPA/k-prevote.csv'
-# k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
-
-# # Create interpolation function for "Throughput: pv"
-# k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
-
-# # Plot and save for "Throughput: pv"
-# plt.figure(figsize=(10, 6))
-# plt.plot(k_fine_pv, p_fine_pv, '-', label="Network Throughput", color="red")
-# plt.title("Throughput vs Coefficient k (prevote)")
-# plt.xlabel("Coefficient k")
-# plt.ylabel("Network Throughput [blocks/s]")
-# plt.legend()
-# plt.grid()
-# plt.savefig("k_pv.png")
-# # plt.show()
-
-# # Example usage for "Throughput: pv" CSV
-# file_path_pv = '../PEPA/PEPA/k-propose-prevote.csv'
-# k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
-
-# # Create interpolation function for "Throughput: pv"
-# k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
-
-# # Plot and save for "Throughput: pv"
-# plt.figure(figsize=(10, 6))
-# plt.plot(k_fine_pv, p_fine_pv, '-', label="Network Throughput", color="red")
-# plt.title("Throughput vs Coefficient k (prevote)")
-# plt.xlabel("Coefficient k")
-# plt.ylabel("Network Throughput [blocks/s]")
-# plt.legend()
-# plt.grid()
-# plt.savefig("k_pv_p.png")
-# # plt.show()
-
 # Example usage for "Throughput: pv" CSV
-file_path_pv = '../PEPA/PEPA/g.csv'
+file_path_pv = './csv/g-non-homogeneous.csv'
 k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
 
 # Create interpolation function for "Throughput: pv"
@@ -88,12 +34,30 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 # Plot and save for "Throughput: pv"
 plt.figure(figsize=(10, 6))
 plt.plot(k_fine_pv, p_fine_pv, '-', label="Network Throughput", color="blue")
-plt.title("Throughput vs Coefficient g")
+plt.title("Timeout increase rate for non-homogeneous proposers)")
 plt.xlabel("Coefficient g")
 plt.ylabel("Network Throughput [blocks/s]")
 plt.legend()
 plt.grid()
-plt.savefig("g.png")
+plt.savefig("g-non-homogeneous.png")
+# plt.show()
+
+# Example usage for "Throughput: pv" CSV
+file_path_pv = './csv/g-homogeneous.csv'
+k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
+
+# Create interpolation function for "Throughput: pv"
+k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
+
+# Plot and save for "Throughput: pv"
+plt.figure(figsize=(10, 6))
+plt.plot(k_fine_pv, p_fine_pv, '-', label="Network Throughput", color="blue")
+plt.title("Timeout increase rate for homogeneous proposers")
+plt.xlabel("Coefficient g")
+plt.ylabel("Network Throughput [blocks/s]")
+plt.legend()
+plt.grid()
+plt.savefig("g-homogeneous.png")
 # plt.show()
 
 # Example usage for "Throughput: pv" CSV
@@ -105,7 +69,7 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 # Plot and save for "Throughput: pv"
 plt.figure(figsize=(10, 6))
-plt.plot(k_fine_pv, p_fine_pv, '-', label="Multi-Round >= 2", color="red")
+plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="red")
 plt.axvline(x=1, color="blue", linestyle="--")
 plt.title("Prevote time for non-homogeneous proposers")
 plt.xlabel("Coefficient k")
@@ -125,7 +89,7 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 # Plot and save for "Throughput: pv"
 plt.figure(figsize=(10, 6))
-plt.plot(k_fine_pv, p_fine_pv, '-', label="Multi-Round >= 2", color="red")
+plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="red")
 plt.axvline(x=1, color="blue", linestyle="--")
 plt.title("Prevote time for homogeneous proposers")
 plt.xlabel("Coefficient k")
@@ -146,7 +110,7 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 # Plot and save for "Throughput: pv"
 plt.figure(figsize=(10, 6))
-plt.plot(k_fine_pv, p_fine_pv, '-', label="Multi-Round >= 2", color="red")
+plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="red")
 plt.axvline(x=1, color="blue", linestyle="--")
 plt.title("Propose and Prevote time for homogeneous proposers")
 plt.xlabel("Coefficient k")
@@ -167,11 +131,11 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 # Plot and save for "Throughput: pv"
 plt.figure(figsize=(10, 6))
-plt.plot(k_fine_pv, p_fine_pv, '-', label="Multi-Round >= 2", color="blue")
+plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="blue")
 plt.axvline(x=1, color="orange", linestyle="--")
-plt.axvline(x=1.8, color="red", linestyle="--", label="Optimal sigma")
+plt.axvline(x=1.8, color="red", linestyle="--", label="Optimal σ")
 plt.title("Propose timeout for non-homogeneous proposers")
-plt.xlabel("Coefficient sigma")
+plt.xlabel("Coefficient σ")
 plt.ylabel("Network Throughput [blocks/s]")
 # plt.ylim(0, 1.0)
 plt.legend()
@@ -189,11 +153,11 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 # Plot and save for "Throughput: pv"
 plt.figure(figsize=(10, 6))
-plt.plot(k_fine_pv, p_fine_pv, '-', label="Multi-Round >= 2", color="blue")
+plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="blue")
 plt.axvline(x=1, color="orange", linestyle="--")
-# plt.axvline(x=1.8, color="red", linestyle="--", label="Optimal sigma")
+plt.axvline(x=4, color="red", linestyle="--", label="Optimal σ")
 plt.title("Prevote timeout for homogeneous proposers")
-plt.xlabel("Coefficient sigma")
+plt.xlabel("Coefficient σ")
 plt.ylabel("Network Throughput [blocks/s]")
 # plt.ylim(0, 1.0)
 plt.legend()
