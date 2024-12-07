@@ -34,7 +34,7 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 # Plot and save for "Throughput: pv"
 plt.figure(figsize=(10, 6))
 plt.plot(k_fine_pv, p_fine_pv, '-', label="Network Throughput", color="blue")
-plt.title("Timeout increase rate for non-homogeneous proposers)")
+plt.title("Timeout increase rate for non-homogeneous proposers")
 plt.xlabel("Coefficient g")
 plt.ylabel("Network Throughput [blocks/s]")
 plt.legend()
