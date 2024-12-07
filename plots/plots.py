@@ -32,7 +32,7 @@ k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
 k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 # Plot and save for "Throughput: pv"
-plt.figure(figsize=(10, 6), facecolor='lightgray')
+plt.figure(figsize=(10, 6))
 plt.plot(k_fine_pv, p_fine_pv, '-', label="Network Throughput", color="blue")
 plt.title("Timeout increase rate for non-homogeneous proposers")
 plt.xlabel("Coefficient g")
@@ -50,7 +50,7 @@ k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
 k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 # Plot and save for "Throughput: pv"
-plt.figure(figsize=(10, 6) , facecolor='lightgrey')
+plt.figure(figsize=(10, 6))
 plt.plot(k_fine_pv, p_fine_pv, '-', label="Network Throughput", color="blue")
 plt.title("Timeout increase rate for homogeneous proposers")
 plt.xlabel("Coefficient g")
@@ -68,7 +68,7 @@ k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
 k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 # Plot and save for "Throughput: pv"
-plt.figure(figsize=(10, 6) , facecolor='lightgrey')
+plt.figure(figsize=(10, 6))
 plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="red")
 plt.axvline(x=1, color="blue", linestyle="--")
 plt.title("Prevote time for non-homogeneous proposers")
@@ -88,7 +88,7 @@ k_values_pv, pv_values = parse_csv_to_arrays(file_path_pv)
 k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 # Plot and save for "Throughput: pv"
-plt.figure(figsize=(10, 6) , facecolor='lightgrey')
+plt.figure(figsize=(10, 6))
 plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="red")
 plt.axvline(x=1, color="blue", linestyle="--")
 plt.title("Prevote time for homogeneous proposers")
@@ -109,7 +109,7 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 
 # Plot and save for "Throughput: pv"
-plt.figure(figsize=(10, 6), facecolor='lightgrey')
+plt.figure(figsize=(10, 6))
 plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="red")
 plt.axvline(x=1, color="blue", linestyle="--")
 plt.title("Propose and Prevote time for homogeneous proposers")
@@ -130,7 +130,7 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 
 # Plot and save for "Throughput: pv"
-plt.figure(figsize=(10, 6), facecolor='lightgrey')
+plt.figure(figsize=(10, 6))
 plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="blue")
 plt.axvline(x=1, color="orange", linestyle="--")
 plt.axvline(x=1.8, color="red", linestyle="--", label="Optimal σ")
@@ -152,7 +152,7 @@ k_fine_pv, p_fine_pv = interpolate(k_values_pv, pv_values)
 
 
 # Plot and save for "Throughput: pv"
-plt.figure(figsize=(10, 6), facecolor='lightgrey')
+plt.figure(figsize=(10, 6))
 plt.plot(k_fine_pv, p_fine_pv, '-', label="Throughput", color="blue")
 plt.axvline(x=1, color="orange", linestyle="--")
 plt.axvline(x=4, color="red", linestyle="--", label="Optimal σ")
