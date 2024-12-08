@@ -1,3 +1,0 @@
-- Created pepa model on eclipse with sample variables
-- Created calculations.py to compute the rates
--
